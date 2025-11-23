@@ -6,7 +6,7 @@ import { Menu, X, ArrowRight, Instagram, Mail, Play } from 'lucide-react';
 import spiralStaircase from '../../assets/spiral_staircase.png';
 import projectThumb1 from '../../assets/project_thumb_1.jpg';
 import projectThumb2 from '../../assets/project_thumb_2.png';
-import projectThumb3 from '../../assets/project_thumb_3.png';
+import projectThumb3 from '../../assets/project_thumb_3.jpg';
 import technicalSketch from '../../assets/technical_sketch.png';
 
 // --- Assets & Config ---
@@ -218,7 +218,7 @@ export default function AaliyaPortfolio() {
 
 
                     <div className="absolute bottom-12 left-0 right-0 flex justify-center md:justify-start md:left-32 text-xs font-bold tracking-widest uppercase">
-                        <span>2023-2025</span>
+                        <span>2025</span>
                     </div>
                 </Section>
 
@@ -256,82 +256,20 @@ export default function AaliyaPortfolio() {
                 </Section>
 
                 {/* --- SECTION 3: RESUME --- */}
-                <Section className="bg-white min-w-max snap-start flex items-center border-l border-gray-200">
-                    <div className="h-full grid grid-rows-3 grid-flow-col gap-x-12 gap-y-8 p-12 auto-cols-[450px]">
+                <Section className="bg-white snap-start flex items-center border-l border-gray-200">
+                    <div className="h-full grid gap-x-12 gap-y-8 p-12" style={{ gridTemplateColumns: '300px 600px 450px' }}>
 
-                        {/* COL 1 */}
-                        <div className="flex flex-col justify-between border-r border-gray-100 pr-8">
+                        {/* Summary spans 2 columns */}
+                        <div className="col-span-2 flex flex-col">
                             <div>
                                 <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Professional Summary</h4>
                                 <p className="text-sm leading-relaxed text-gray-600 text-left">
-                                    I am an Interior Architecture & Design student with a strong foundation in conceptual design and technical proficiency. I excel in Hand & CAD drafting, 3D modeling, and rendering. My portfolio showcases innovative and functional spaces, thoughtful material selection, and refined interior styling. I have a keen eye for detail and am dedicated to creating research-driven solutions that seamlessly integrate cutting-cutting-edge technology and comprehensive space planning.
+                                    I am an Interior Architecture & Design student with a strong foundation in conceptual design and technical proficiency. I excel in Hand & CAD drafting, 3D modeling, and rendering. My portfolio showcases innovative and functional spaces, thoughtful material selection, and refined interior styling. I have a keen eye for detail and am dedicated to creating research-driven solutions that seamlessly integrate cutting-edge technology and comprehensive space planning.
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col border-r border-gray-100 pr-8">
-                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Education</h4>
-                            <div className="space-y-4">
-                                <div>
-                                    <span className="text-xs font-bold text-gray-400 block mb-1">2023 - 2027</span>
-                                    <p className="font-bold text-sm">BA (Hons) Interior Architecture and Design</p>
-                                    <p className="text-xs text-gray-500">Indian Institute of Art and Design, (Kingston University)</p>
-                                </div>
-                                <div>
-                                    <span className="text-xs font-bold text-gray-400 block mb-1">2019 - 2023</span>
-                                    <p className="font-bold text-sm">CBSE Humanities</p>
-                                    <p className="text-xs text-gray-500">Delhi Public School, Gurgaon</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex flex-col justify-center border-r border-gray-100 pr-8">
-                            <div>
-                                <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Contact & Languages</h4>
-                                <div className="text-sm text-gray-600 space-y-1 mb-4">
-                                    <p>Gurgaon, India</p>
-                                    <p>aaliyachoudhary24@outlook.com</p>
-                                    <p>+91 8800778888</p>
-                                </div>
-                                <h5 className="font-bold text-xs uppercase mb-2">Languages</h5>
-                                <p className="text-sm text-gray-600">English, Hindi, Spanish</p>
-                            </div>
-                        </div>
 
-
-
-                        {/* COL 2 */}
-                        <div className="flex flex-col border-r border-gray-100 pr-8">
-                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Experience</h4>
-                            <div>
-                                <p className="font-bold text-sm">Manager, Art & Design Workshop</p>
-                                <p className="text-xs text-gray-500 mb-2">Zomato</p>
-                                <p className="text-xs text-gray-600 leading-relaxed">
-                                    Orchestrated an immersive art and design workshop that engaged over 50 participants through hands-on creative exercises and in-depth discussions on visual storytelling.
-                                </p>
-                            </div>
-                            <div>
-                                <p className="font-bold text-sm">President, Design Club (Ensemble)</p>
-                                <p className="text-xs text-gray-500 mb-2">Delhi Public School</p>
-                                <p className="text-xs text-gray-600 leading-relaxed">
-                                    I led the club for two years by managing design teams and coordinating interactive workshops and competitions and designing event branding, promotional materials, and digital assets.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col border-r border-gray-100 pr-8">
-                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Courses</h4>
-                            <div className="space-y-2">
-                                <div>
-                                    <p className="font-bold text-sm">Roman Architecture</p>
-                                    <p className="text-xs text-gray-500">Yale University</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-sm">Design Thinking for Business Strategy</p>
-                                    <p className="text-xs text-gray-500">The University of Sydney Business School</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>   </div>
-
-                        {/* COL 3 */}
+                        {/* Col 3 Row 1 */}
                         <div className="flex flex-col">
                             <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Certifications</h4>
                             <div className="space-y-2">
@@ -354,7 +292,48 @@ export default function AaliyaPortfolio() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col pr-8">
+                        {/* Col 1 Row 2 */}
+                        <div className="flex flex-col">
+                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Education</h4>
+                            <div className="space-y-4">
+                                <div>
+                                    <span className="text-xs font-bold text-gray-400 block mb-1">2023 - 2027</span>
+                                    <p className="font-bold text-sm">BA (Hons) Interior Architecture and Design</p>
+                                    <p className="text-xs text-gray-500">Indian Institute of Art and Design, (Kingston University)</p>
+                                </div>
+                                <div>
+                                    <span className="text-xs font-bold text-gray-400 block mb-1">2019 - 2023</span>
+                                    <p className="font-bold text-sm">CBSE Humanities</p>
+                                    <p className="text-xs text-gray-500">Delhi Public School, Gurgaon</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Col 2 Row 2 */}
+                        <div className="flex flex-col">
+                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Experience</h4>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="font-bold text-sm">Design Intern</p>
+                                    <p className="text-xs text-gray-500 mb-2">Genesis Architects Pvt. Ltd.</p>
+                                    <p className="text-xs text-gray-600 leading-relaxed">
+                                        Contributed to end-to-end design workflow, concept ideation, spatial planning, detail development, and client presentation support. Assisted in refining material palettes, coordinating drawings, and ensuring design intent was accurately represented across project deliverables.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="font-bold text-sm">Junior Designer</p>
+                                    <p className="text-xs text-gray-500 mb-2">ALCA's</p>
+                                    <p className="text-xs text-gray-600 leading-relaxed">
+                                        Worked on residential layouts, interior detailing, and 3D visualization. Conducted material research, prepared client presentations, and collaborated with contractors to maintain design clarity on site.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        {/* Col 3 Row 2 */}
+                        <div className="flex flex-col">
                             <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Skills</h4>
                             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-600">
                                 <span>AutoCAD</span>
@@ -381,7 +360,36 @@ export default function AaliyaPortfolio() {
                                 <span>Team Collaboration</span>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-end">
+
+                        {/* Col 1 Row 3 */}
+                        <div className="flex flex-col">
+                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Contact & Languages</h4>
+                            <div className="text-sm text-gray-600 space-y-1 mb-4">
+                                <p>Gurgaon, India</p>
+                                <p>aaliyachoudhary24@outlook.com</p>
+                                <p>+91 8800778888</p>
+                            </div>
+
+                        </div>
+
+
+                        {/* Col 2 Row 3 */}
+                        <div className="flex flex-col">
+                            <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Courses</h4>
+                            <div className="space-y-2">
+                                <div>
+                                    <p className="font-bold text-sm">Roman Architecture</p>
+                                    <p className="text-xs text-gray-500">Yale University</p>
+                                </div>
+                                <div>
+                                    <p className="font-bold text-sm">Design Thinking for Business Strategy</p>
+                                    <p className="text-xs text-gray-500">The University of Sydney Business School</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Col 3 Row 3 */}
+                        <div className="flex flex-col">
                             <h4 className="font-bold text-sm tracking-widest uppercase mb-4 border-b border-black pb-2">Extra Curriculars</h4>
                             <p className="text-sm text-gray-600 leading-relaxed">
                                 Fashion Photography, Fashion Styling, Modeling, Graphic Design, Resin Art, Reading.
@@ -397,9 +405,9 @@ export default function AaliyaPortfolio() {
                         <h3 className="font-serif text-4xl mb-12">Projects</h3>
 
                         {[
-                            { year: '2024', name: 'Heritage Haven', type: 'Residential', img: IMAGES.thumb1 },
-                            { year: '2023', name: 'Courtyard Villa', type: 'Commercial', img: IMAGES.thumb2 },
-                            { year: '2023', name: 'Gol Dak Khana Museum', type: 'Private', img: IMAGES.thumb3 },
+                            { year: '2025', name: 'Heritage Haven', type: 'Commercial', img: IMAGES.thumb1 },
+                            { year: '2025', name: 'Courtyard Villa', type: 'Residential', img: IMAGES.thumb2 },
+                            { year: '2025', name: 'Gol Dak Khana Museum', type: 'Commercial', img: IMAGES.thumb3 },
                         ].map((project, idx) => (
                             <div
                                 key={idx}
