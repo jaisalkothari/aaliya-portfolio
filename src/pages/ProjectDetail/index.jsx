@@ -6,6 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 // Load all project images eagerly
 const project1ImagesGlob = import.meta.glob('../../assets/project-images/project-1-*.{png,jpg,jpeg,svg}', { eager: true });
 const project2ImagesGlob = import.meta.glob('../../assets/project-images/project-2-*.{png,jpg,jpeg,svg}', { eager: true });
+const project3ImagesGlob = import.meta.glob('../../assets/project-images/project-3-*.{png,jpg,jpeg,svg}', { eager: true });
 
 const ProjectDetail = () => {
     const { projectId } = useParams();
@@ -41,6 +42,8 @@ const ProjectDetail = () => {
             imagesGlob = project1ImagesGlob;
         } else if (projectId === 'courtyard-villa') {
             imagesGlob = project2ImagesGlob;
+        } else if (projectId === 'gol-dak-khana-museum') {
+            imagesGlob = project3ImagesGlob;
         }
 
         if (!imagesGlob) return null;
@@ -49,8 +52,15 @@ const ProjectDetail = () => {
         return key ? imagesGlob[key].default : null;
     };
 
+    // Helper to get flowchart image for project 3
+    const getFlowchart = () => {
+        if (projectId !== 'gol-dak-khana-museum') return null;
+        const key = Object.keys(project3ImagesGlob).find(k => k.includes('flowchart.'));
+        return key ? project3ImagesGlob[key].default : null;
+    };
+
     // Fallback for other projects
-    const heroImage = (projectId === 'heritage-haven' || projectId === 'courtyard-villa')
+    const heroImage = (projectId === 'heritage-haven' || projectId === 'courtyard-villa' || projectId === 'gol-dak-khana-museum')
         ? getImage(projectId === 'heritage-haven' ? 0 : 1, 1)
         : "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop";
 
@@ -392,6 +402,136 @@ const ProjectDetail = () => {
                                         <img src={getImage(3, 6) || heroImage} alt="Meditation" className="w-full h-full object-cover" />
                                     </div>
                                     <p className="text-sm font-light text-gray-600 text-center">Meditation zone in the back loggia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            ) : projectId === 'gol-dak-khana-museum' ? (
+                // PROJECT 3: Gol Dak Khana Museum Layout
+                <div className="max-w-7xl mx-auto px-4 md:px-12 py-24">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+
+                        {/* Site Information */}
+                        <div className="md:col-span-7">
+                            <h3 className="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Site Information</h3>
+                            <div className="text-gray-800 leading-relaxed flex flex-col gap-1 mb-4">
+                                <p>Site: Gol Dak Khana, New Delhi</p>
+                                <p>Area: 9000 sq m</p>
+                                <p>Organisation: IIAD</p>
+                                <p>Project: Academic Project (Heritage in Design)</p>
+                            </div>
+                            <p className="text-sm text-gray-600 leading-relaxed">
+                                The proposed experiential museum stands as a place where learning meets innovation and heritage in one place. The idea is to bring back the heritage elements of Gol Dak Khana and provide a space where the public can come and learn more about the history of communication in India and the history of Gol Dak Khana as well as experience closely in a fun way what the postal world holds. This also intends to bring in and generate revenue in the Gol Dak Khana.
+                            </p>
+                        </div>
+
+                        {/* Site Images */}
+                        <div className="md:col-span-5 flex flex-col gap-4">
+                            <div className="h-[40vh] overflow-hidden">
+                                <img src={getImage(1, 4) || heroImage} alt="Site View 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="h-[40vh] overflow-hidden">
+                                <img src={getImage(1, 5) || heroImage} alt="Site View 2" className="w-full h-full object-cover" />
+                            </div>
+                        </div>
+
+                        {/* First 3 images in a row */}
+                        <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                            <div className="aspect-[4/3] overflow-hidden">
+                                <img src={getImage(1, 2) || heroImage} alt="Concept 1" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="aspect-[4/3] overflow-hidden">
+                                <img src={getImage(1, 3) || heroImage} alt="Concept 2" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="aspect-[4/3] overflow-hidden">
+                                <img src={getImage(2, 1) || heroImage} alt="Concept 3" className="w-full h-full object-cover" />
+                            </div>
+                        </div>
+
+                        {/* Images and Text - Stacked with Alignment */}
+                        <div className="md:col-span-12 mt-12">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {/* Left column - Images stacked */}
+                                <div className="flex flex-col gap-8">
+                                    <div className="aspect-[4/3] overflow-hidden">
+                                        <img src={getImage(2, 2) || heroImage} alt="Independence Era" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div className="aspect-[4/3] overflow-hidden">
+                                        <img src={getImage(2, 3) || heroImage} alt="Prehistoric Communication" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                                {/* Right column - Text stacked, aligned with images */}
+                                <div className="flex flex-col gap-8">
+                                    <div className="aspect-[4/3] flex items-center">
+                                        <p className="text-sm text-gray-600 leading-relaxed">
+                                            This concept captures the emotional journey of communication during India's Independence era — from silence under colonial control to the fearless voices of a nation finding its freedom. The space immerses visitors in this transformation through light, sound, and interaction: dim, tense zones evoke censorship and secrecy, gradually opening into brighter, vibrant areas symbolizing unity and self-expression. By experiencing this shift, visitors feel how letters, posters, radio broadcasts, and speeches evolved from tools of restriction into instruments of resistance and identity — celebrating the moment when communication itself became an act of freedom.
+                                        </p>
+                                    </div>
+                                    <div className="aspect-[4/3] flex items-center">
+                                        <p className="text-sm text-gray-600 leading-relaxed">
+                                            This concept brings to life the earliest forms of human communication — when expressions, gestures, sounds, and symbols were the only tools to share stories and emotions. The space recreates the raw, instinctive atmosphere of prehistoric life, with textured walls resembling caves, ambient echoes, and visuals of ancient markings.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Materials */}
+                        <div className="md:col-span-12 text-center py-12 mt-12">
+                            <h3 className="text-sm font-bold uppercase tracking-widest mb-6">Materials</h3>
+                            <div className="flex justify-center flex-wrap gap-8 text-lg font-light text-gray-600">
+                                <span>Jaisalmer mill tiles</span>
+                                <span>Terracotta tiles</span>
+                                <span>Terrazzo tiles</span>
+                                <span>Lime plaster</span>
+                                <span>Timber</span>
+                            </div>
+                        </div>
+
+                        {/* Inspiration */}
+                        <div className="md:col-span-12 mt-12">
+                            <h2 className="text-3xl md:text-4xl mb-12 text-center">Inspiration</h2>
+                            <div className="flex justify-center gap-8 flex-wrap max-w-4xl mx-auto">
+                                <div className="w-48 h-64 flex items-center justify-center bg-gray-50">
+                                    <img src={getImage(2, 4) || heroImage} alt="Inspiration 1" className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div className="w-48 h-64 flex items-center justify-center bg-gray-50">
+                                    <img src={getImage(2, 5) || heroImage} alt="Inspiration 2" className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div className="w-48 h-64 flex items-center justify-center bg-gray-50">
+                                    <img src={getImage(2, 6) || heroImage} alt="Inspiration 3" className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div className="w-48 h-64 flex items-center justify-center bg-gray-50">
+                                    <img src={getImage(2, 7) || heroImage} alt="Inspiration 4" className="max-w-full max-h-full object-contain" />
+                                </div>
+                            </div>
+                            <div className="text-center mt-8">
+                                <p className="text-lg font-light text-gray-600">Inspiration from Neo Classical architecture</p>
+                            </div>
+                        </div>
+
+                        {/* Flowchart - Smaller */}
+                        <div className="md:col-span-12 mt-12 flex justify-center">
+                            <div className="w-full max-w-3xl aspect-[16/9] overflow-hidden flex items-center justify-center bg-gray-50">
+                                <img src={getFlowchart() || heroImage} alt="Flowchart" className="w-full h-full object-contain" />
+                            </div>
+                        </div>
+
+                        {/* Final Images - Slide 3 Image 1 full width, then 2 & 3 in one row */}
+                        <div className="md:col-span-12 mt-12">
+                            <div className="grid grid-cols-1 gap-8">
+                                <div className="h-[60vh] overflow-hidden">
+                                    <img src={getImage(3, 1) || heroImage} alt="Final 1" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="aspect-[4/3] overflow-hidden flex items-center justify-center bg-gray-50">
+                                        <img src={getImage(3, 2) || heroImage} alt="Final 2" className="w-full h-full object-contain" />
+                                    </div>
+                                    <div className="aspect-[4/3] overflow-hidden flex items-center justify-center bg-gray-50">
+                                        <img src={getImage(3, 3) || heroImage} alt="Final 3" className="w-full h-full object-contain" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

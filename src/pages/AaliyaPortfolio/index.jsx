@@ -8,6 +8,7 @@ import projectThumb1 from '../../assets/project_thumb_1.jpg';
 import projectThumb2 from '../../assets/project_thumb_2.png';
 import projectThumb3 from '../../assets/project_thumb_3.jpg';
 import technicalSketch from '../../assets/technical_sketch.png';
+import profilePic from '../../assets/profile-pic.jpeg';
 
 // --- Assets & Config ---
 const IMAGES = {
@@ -483,11 +484,18 @@ export default function AaliyaPortfolio() {
                     </button>
                 </Section> */}
 
-                {/* --- SECTION 7: CONTACT / BLUE --- */}
-                <Section className="bg-zinc-700 min-w-[100vw] md:min-w-[50vw] snap-start relative flex-col justify-between ">
+                <Section className="bg-zinc-700 w-[50vw] !min-w-[50vw] snap-start relative flex-col justify-between ">
                     <div className="w-full flex justify-between items-start pt-12 px-4 pl-8">
                         <div>
-                            <h2 className="font-serif text-4xl mb-6 text-white"><a href="#">Projects</a><br /><a href="#">About</a><br /><a href="#">Shop</a><br /><a href="#">Press</a><br /><a href="#">Contact</a></h2>
+                            <h2 className="font-serif text-4xl mb-6 text-white flex flex-col gap-1"><a href="#" className="hover:underline mb-3" >Projects</a><br /><a href="#" className="hover:underline mb-3">About</a><br /><a href="#" className="hover:underline mb-3">Contact</a></h2>
+                        </div>
+
+                        {/* Profile Picture */}
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="w-64 overflow-hidden border-b-2 border-white">
+                                <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
+                            </div>
+                            <p className="text-xs font-bold uppercase tracking-widest text-white">Me</p>
                         </div>
 
                     </div>
